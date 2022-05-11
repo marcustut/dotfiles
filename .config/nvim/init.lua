@@ -54,10 +54,14 @@ opt('number', true, window)
 opt('relativenumber', true, window)
 
 -- Colorscheme
-opt('termguicolors', true)
-opt('background', 'dark')
-vim.g.tokyonight_style = 'night'
-cmd [[colorscheme tokyonight]]
+if os.getenv("TERM_PROGRAM") ~= "Apple_Terminal"
+then
+  opt('termguicolors', true)
+  opt('background', 'dark')
+  vim.g.tokyonight_style = 'night'
+  cmd [[colorscheme tokyonight]]
+end
+cmd [[highlight Normal guibg=none]]
 
 -- Autocommands
 autocmd('numbertoggle', {

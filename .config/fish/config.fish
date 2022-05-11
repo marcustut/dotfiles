@@ -55,9 +55,29 @@ fish_add_path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # Add mysql-client to path
 fish_add_path /opt/homebrew/opt/mysql-client/bin
 
+# Emscripten
+# . $HOME/emsdk/emsdk_env.fish
+
+# Blender
+fish_add_path /Applications/Blender.app/Contents/MacOS
+alias blender='Blender'
+
+# Flutter
+fish_add_path $HOME/flutter/bin
+
+# Android SDK
+set -Ux ANDROID_HOME $HOME/Library/Android/sdk
+fish_add_path $HOME/Library/Android/sdk/emulator
+fish_add_path $HOME/Library/Android/sdk/tools
+fish_add_path $HOME/Library/Android/sdk/tools/bin
+fish_add_path $HOME/Library/Android/sdk/platform-tools
+
 # ----- Others -----
 # startship prompt
 starship init fish | source
 
 # fish vi mode
 fish_vi_key_bindings
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/marcus/google-cloud-sdk/path.fish.inc' ]; . '/Users/marcus/google-cloud-sdk/path.fish.inc'; end
