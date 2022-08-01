@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export ANDROID_HOME:/Users/marcus/Library/Android/sdk
+SETUVAR --export BUN_INSTALL:/Users/marcus/\x2ebun
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GO111MODULE:on
 SETUVAR --export --path GOPATH:/Users/marcus/go
@@ -40,7 +41,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Applications/Blender\x2eapp/Contents/MacOS\x1e/Users/marcus/Library/Android/sdk/emulator\x1e/Users/marcus/Library/Android/sdk/tools/bin\x1e/Users/marcus/Library/Android/sdk/platform\x2dtools\x1e/Users/marcus/Library/Android/sdk/tools\x1e/Users/marcus/flutter/bin\x1e/opt/homebrew/opt/mysql\x2dclient/bin\x1e/opt/homebrew/opt/llvm/bin\x1e/Users/marcus/go/bin\x1e/Applications/Visual\x20Studio\x20Code\x2eapp/Contents/Resources/app/bin\x1e/Users/marcus/Library/Python/3\x2e8/bin\x1e/Users/marcus/\x2ecargo/bin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/Users/marcus/\x2elocal/share/solana/install/active_release/bin\x1e/Applications/Blender\x2eapp/Contents/MacOS\x1e/Users/marcus/Library/Android/sdk/emulator\x1e/Users/marcus/Library/Android/sdk/tools/bin\x1e/Users/marcus/Library/Android/sdk/platform\x2dtools\x1e/Users/marcus/Library/Android/sdk/tools\x1e/Users/marcus/flutter/bin\x1e/opt/homebrew/opt/mysql\x2dclient/bin\x1e/opt/homebrew/opt/llvm/bin\x1e/Users/marcus/go/bin\x1e/Applications/Visual\x20Studio\x20Code\x2eapp/Contents/Resources/app/bin\x1e/Users/marcus/Library/Python/3\x2e8/bin\x1e/Users/marcus/\x2ecargo/bin\x1e/opt/homebrew/bin
 SETUVAR nvm_data:/Users/marcus/\x2elocal/share/nvm
 SETUVAR --export nvm_default_version:v16\x2e13\x2e0
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist

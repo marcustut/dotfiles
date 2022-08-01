@@ -1,17 +1,15 @@
 if status is-interactive
 	# Commands to run in interactive sessions can go here
 	# Default NVM version
-	set --universal nvm_default_version v16.16.0
+	set --universal nvm_default_version v16.13.0
 end
 
 # ----- Alias -----
 
 alias fishconfig='nvim $HOME/.config/fish/config.fish'
 alias nvimrc='nvim $HOME/.config/nvim/init.lua'
-alias vimrc='nvim $HOME/.config/nvim/init.lua'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias vim='nvim'
 alias g='git'
 alias python='python3'
 
@@ -58,11 +56,14 @@ fish_add_path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fish_add_path /opt/homebrew/opt/mysql-client/bin
 
 # Emscripten
-# . $HOME/emsdk/emsdk_env.fish
+. $HOME/emsdk/emsdk_env.fish
 
 # Blender
 fish_add_path /Applications/Blender.app/Contents/MacOS
 alias blender='Blender'
+
+# Flutter
+fish_add_path $HOME/flutter/bin
 
 # Android SDK
 set -Ux ANDROID_HOME $HOME/Library/Android/sdk
@@ -71,23 +72,9 @@ fish_add_path $HOME/Library/Android/sdk/tools
 fish_add_path $HOME/Library/Android/sdk/tools/bin
 fish_add_path $HOME/Library/Android/sdk/platform-tools
 
-# Solana
-fish_add_path $HOME/.local/share/solana/install/active_release/bin
-
 # ----- Others -----
 # startship prompt
 starship init fish | source
 
 # fish vi mode
 fish_vi_key_bindings
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/marcus/google-cloud-sdk/path.fish.inc' ]; . '/Users/marcus/google-cloud-sdk/path.fish.inc'; end
-
-set -gx PNPM_HOME "/Users/marcus/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
-
-# Bun
-set -Ux BUN_INSTALL "/Users/marcus/.bun"
-set -px --path PATH "/Users/marcus/.bun/bin"
-
