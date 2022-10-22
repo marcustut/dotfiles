@@ -7,8 +7,8 @@ end
 # ----- Alias -----
 
 alias fishconfig='nvim $HOME/.config/fish/config.fish'
-alias nvimrc='nvim $HOME/.config/nvim/init.lua'
-alias vimrc='nvim $HOME/.config/nvim/init.lua'
+alias nvimrc='nvim $HOME/.config/nvim/lua/user/init.lua'
+alias vimrc='nvim $HOME/.config/nvim/lua/user/init.lua'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias vim='nvim'
