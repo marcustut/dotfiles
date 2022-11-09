@@ -91,3 +91,9 @@ set -gx PATH "$PNPM_HOME" $PATH
 set -Ux BUN_INSTALL "/Users/marcus/.bun"
 set -px --path PATH "/Users/marcus/.bun/bin"
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /Users/marcus/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
