@@ -60,5 +60,10 @@ if status is-interactive
     #         Environment          #
     #                              #
     ################################
-    set -Ua fish_user_paths $HOME/.cargo/bin
+    set -Ua fish_user_paths $HOME/.cargo/bin # cargo
+    source $HOME/.local/bin/env.fish         # add .local/bin to PATH
 end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

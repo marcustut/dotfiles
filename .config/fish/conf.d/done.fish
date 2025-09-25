@@ -258,9 +258,14 @@ if set -q __done_enabled
                 if test "$__done_notify_sound" -eq 1
                     echo -e "\a" # bell sound
                 end
+
             else if set -q KITTY_WINDOW_ID
                 printf "\x1b]99;i=done:d=0;$title\x1b\\"
                 printf "\x1b]99;i=done:d=1:p=body;$message\x1b\\"
+
+            else if test "$TERM_PROGRAM" = "ghostty"
+                printf "\x1b]777;notify;%s;%s\x1b\\" "$title" "$message"
+
             else if type -q terminal-notifier # https://github.com/julienXX/terminal-notifier
                 if test "$__done_notify_sound" -eq 1
                     # pipe message into terminal-notifier to avoid escaping issues (https://github.com/julienXX/terminal-notifier/issues/134). fixes #140
