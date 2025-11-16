@@ -1,2 +1,7 @@
 theme = Catppuccin Macchiato
-font-family = "FiraCode Nerd Font Mono"
+# font-family = "FiraCode Nerd Font Mono"
+font-family = "IosevkaTerm Nerd Font Mono"
+
+# to disable top bar on MacOS
+# window-decoration = false
+# macos-titlebar-style = "hidden"
