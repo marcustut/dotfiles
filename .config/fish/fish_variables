@@ -74,7 +74,7 @@ SETUVAR pure_color_warning:yellow
 SETUVAR pure_enable_aws_profile:true
 SETUVAR pure_enable_container_detection:true
 SETUVAR pure_enable_git:true
-SETUVAR pure_enable_k8s:true
+SETUVAR pure_enable_k8s:false
 SETUVAR pure_enable_nixdevshell:false
 SETUVAR pure_enable_single_line_prompt:true
 SETUVAR pure_enable_virtualenv:true

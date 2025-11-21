@@ -10,7 +10,7 @@ if status is-interactive
     set -U pure_enable_single_line_prompt true
     set -U pure_show_numbered_git_indicator true
     set -U pure_show_jobs true
-    set -U pure_enable_k8s true
+    set -U pure_enable_k8s false
 
     ################################
     #                              #
