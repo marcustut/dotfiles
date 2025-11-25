@@ -70,6 +70,8 @@ setup_space 5 other
 # ===== Rules ==================================
 
 yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Bitwarden$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="System Settings" app="^System Settings$" title=".*" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
@@ -79,9 +81,9 @@ yabai -m rule --add label="mpv" app="^mpv$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 
-yabai -m rule --add app="^Ghostty$" space=^1
-yabai -m rule --add app="^Safari$" space=^2
-yabai -m rule --add app="^WhatsApp$" space=^3
+# yabai -m rule --add app="^Ghostty$" space=^1
+# yabai -m rule --add app="^Safari$" space=^2
+# yabai -m rule --add app="^WhatsApp$" space=^3
 
 # ===== Signals ================================
 

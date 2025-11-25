@@ -1,7 +1,11 @@
-theme = Catppuccin Macchiato
+# theme = "Catppuccin Macchiato"
+theme = "Gruvbox Material Dark"
 # font-family = "FiraCode Nerd Font Mono"
 font-family = "IosevkaTerm Nerd Font Mono"
 
+# background
+background-opacity = 0.8
+
 # to disable top bar on MacOS
-# window-decoration = false
-# macos-titlebar-style = "hidden"
+window-decoration = false
+macos-titlebar-style = "hidden"
