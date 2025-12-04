@@ -28,6 +28,7 @@ if status is-interactive
     alias kns="kubens"
     alias kctx="kubectx"
     alias vim="nvim"
+    alias n="nvim"
     alias g="git"
     alias grep="rg"
     alias mkdir="mkdir -p"
