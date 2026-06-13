@@ -21,3 +21,9 @@ zuliprc
 
 # fish: stale prompt backups
 .config/fish/functions/*.pure-backup.fish
+
+# claude code: track only core config, ignore state/secrets/local
+.claude/*
+!.claude/settings.json
+!.claude/CLAUDE.md
+!.claude/RTK.md
