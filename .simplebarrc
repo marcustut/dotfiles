@@ -32,8 +32,8 @@
     "backgroundColorAsForeground": false
   },
   "themes": {
-    "lightTheme": "GruvboxLight",
-    "darkTheme": "GruvboxDark",
+    "lightTheme": "CatppuccinLatte",
+    "darkTheme": "CatppuccinMacchiato",
     "colorMain": "",
     "colorMainAlt": "",
     "colorMinor": "",
