@@ -5,12 +5,12 @@ if status is-interactive
     #                              #
     ################################
     # See docs: <https://pure-fish.github.io/pure>
-    set -U pure_show_system_time false
-    set -U pure_show_prefix_root_prompt true
-    set -U pure_enable_single_line_prompt true
-    set -U pure_show_numbered_git_indicator true
-    set -U pure_show_jobs true
-    set -U pure_enable_k8s false
+    set -g pure_show_system_time false
+    set -g pure_show_prefix_root_prompt true
+    set -g pure_enable_single_line_prompt true
+    set -g pure_show_numbered_git_indicator true
+    set -g pure_show_jobs true
+    set -g pure_enable_k8s false
 
     ################################
     #                              #
@@ -30,7 +30,6 @@ if status is-interactive
     alias vim="nvim"
     alias n="nvim"
     alias g="git"
-    alias grep="rg"
     alias mkdir="mkdir -p"
     alias cp="cp -v"
     alias mv="mv -v"
@@ -69,20 +68,25 @@ if status is-interactive
     abbr --add gst git stash
     abbr --add gstp git stash pop
 
+    # apps
+    abbr --add zulip uv tool run --python 3.13 zulip-term
+
     ################################
     #                              #
     #         Environment          #
     #                              #
     ################################
-    set -Ua fish_user_paths $HOME/.cargo/bin           # cargo
+    fish_add_path $HOME/.cargo/bin                     # cargo
     source $HOME/.local/bin/env.fish                   # add .local/bin to PATH
     set -gx EDITOR 'nvim'                              # set nvim as editor
     fish_add_path /opt/homebrew/opt/postgresql@16/bin  # add postgresql binaries to PATH
+    fish_add_path $HOME/.emacs.d/bin                   # add emacs binary to PATH
 
     # configure openssl for compilers
     set -x LDFLAGS "-L$(brew --prefix openssl@3)/lib $LDFLAGS"
     set -x CPPFLAGS "-I$(brew --prefix openssl@3)/include $CPPFLAGS"
     set -x PKG_CONFIG_PATH "$(brew --prefix openssl@3)/lib/pkgconfig $PKG_CONFIG_PATH"
+    set -x LIBRARY_PATH "$(brew --prefix)/lib:$LIBRARY_PATH"
 end
 
 # Added by OrbStack: command-line tools and integration
@@ -100,3 +104,8 @@ test -r $HOME/.opam/opam-init/init.fish && source $HOME/.opam/opam-init/init.fis
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# Go
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOPATH/bin
+
