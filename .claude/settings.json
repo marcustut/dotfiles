@@ -34,6 +34,17 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Reply finished\" with title \"Claude Code\"'; afplay /System/Library/Sounds/Glass.aiff",
+            "async": true
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -58,7 +69,7 @@
   "awaySummaryEnabled": false,
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
-  "theme": "auto",
+  "theme": "light",
   "editorMode": "vim",
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true
