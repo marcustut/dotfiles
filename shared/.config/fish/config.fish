@@ -79,14 +79,18 @@ if status is-interactive
     fish_add_path $HOME/.cargo/bin                     # cargo
     source $HOME/.local/bin/env.fish                   # add .local/bin to PATH
     set -gx EDITOR 'nvim'                              # set nvim as editor
-    fish_add_path /opt/homebrew/opt/postgresql@16/bin  # add postgresql binaries to PATH
     fish_add_path $HOME/.emacs.d/bin                   # add emacs binary to PATH
 
-    # configure openssl for compilers
-    set -x LDFLAGS "-L$(brew --prefix openssl@3)/lib $LDFLAGS"
-    set -x CPPFLAGS "-I$(brew --prefix openssl@3)/include $CPPFLAGS"
-    set -x PKG_CONFIG_PATH "$(brew --prefix openssl@3)/lib/pkgconfig $PKG_CONFIG_PATH"
-    set -x LIBRARY_PATH "$(brew --prefix)/lib:$LIBRARY_PATH"
+    # macOS / Homebrew only — skipped on Linux, where `brew` is absent
+    if command -v brew >/dev/null
+        fish_add_path /opt/homebrew/opt/postgresql@16/bin  # add postgresql binaries to PATH
+
+        # configure openssl for compilers
+        set -x LDFLAGS "-L$(brew --prefix openssl@3)/lib $LDFLAGS"
+        set -x CPPFLAGS "-I$(brew --prefix openssl@3)/include $CPPFLAGS"
+        set -x PKG_CONFIG_PATH "$(brew --prefix openssl@3)/lib/pkgconfig $PKG_CONFIG_PATH"
+        set -x LIBRARY_PATH "$(brew --prefix)/lib:$LIBRARY_PATH"
+    end
 end
 
 # Added by OrbStack: command-line tools and integration
