@@ -1,26 +1,30 @@
 # secrets / machine-local
 zuliprc
 
+# editor/tool backup files (e.g. omarchy writes *.bak.<timestamp> on edits)
+*.bak
+*.bak.*
+
 # fish: machine-generated universal vars
-.config/fish/fish_variables
+shared/.config/fish/fish_variables
 
 # fish: fisher-managed plugin files (reinstalled via `fisher update`)
-.config/fish/functions/_*.fish
-.config/fish/functions/fisher.fish
-.config/fish/functions/fzf_configure_bindings.fish
-.config/fish/functions/fish_greeting.fish
-.config/fish/functions/fish_mode_prompt.fish
-.config/fish/functions/fish_prompt.fish
-.config/fish/functions/fish_title.fish
-.config/fish/completions/fisher.fish
-.config/fish/completions/fzf_configure_bindings.fish
-.config/fish/conf.d/_pure_init.fish
-.config/fish/conf.d/pure.fish
-.config/fish/conf.d/fzf.fish
-.config/fish/conf.d/done.fish
+shared/.config/fish/functions/_*.fish
+shared/.config/fish/functions/fisher.fish
+shared/.config/fish/functions/fzf_configure_bindings.fish
+shared/.config/fish/functions/fish_greeting.fish
+shared/.config/fish/functions/fish_mode_prompt.fish
+shared/.config/fish/functions/fish_prompt.fish
+shared/.config/fish/functions/fish_title.fish
+shared/.config/fish/completions/fisher.fish
+shared/.config/fish/completions/fzf_configure_bindings.fish
+shared/.config/fish/conf.d/_pure_init.fish
+shared/.config/fish/conf.d/pure.fish
+shared/.config/fish/conf.d/fzf.fish
+shared/.config/fish/conf.d/done.fish
 
 # fish: stale prompt backups
-.config/fish/functions/*.pure-backup.fish
+shared/.config/fish/functions/*.pure-backup.fish
 
 # claude code: track only core config, ignore state/secrets/local
 .claude/*
