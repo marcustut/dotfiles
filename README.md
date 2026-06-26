@@ -5,13 +5,20 @@ macOS and Linux (Omarchy):
 
 | Package  | Stowed on        | Contents                                                        |
 | -------- | ---------------- | --------------------------------------------------------------- |
-| `shared` | everywhere       | `fish`, `ghostty`, `nvim` (submodule), `tmux`                   |
-| `macos`  | macOS only       | `aerospace`, `yabai`, `.simplebarrc`                            |
-| `linux`  | Linux / Omarchy  | `hypr`, `waybar`, `walker`, `elephant`, `swayosd`, `alacritty`, `kitty` |
+| `shared` | everywhere       | `fish`                                                          |
+| `macos`  | macOS only       | `aerospace`, `yabai`, `.simplebarrc`, `ghostty`, `tmux`, `nvim` (submodule) |
+| `linux`  | Linux / Omarchy  | `hypr`, `waybar`, `swayosd`, `alacritty`, `kitty`, `ghostty`, `tmux` |
 
 Each package mirrors `$HOME`, so its contents land at `~/.config/<app>` (and
 `~/.simplebarrc` for the macOS menu bar). `--no-folding` keeps `~/.config`
 a real directory so `shared` and the OS package can coexist inside it.
+
+Only `fish` is shared: omarchy ships no fish config and uses bash, so fish is
+entirely ours. `ghostty` and `tmux` are kept **per-OS** because omarchy themes
+and ships its own versions on Linux (the Linux `ghostty` pulls omarchy's dynamic
+theme via `config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"`).
+`nvim` is the personal `init.lua` submodule on macOS only; on Linux, omarchy's
+themed LazyVim owns it (installed via `omarchy-nvim-setup`, not tracked here).
 
 ## Quick setup
 
@@ -35,7 +42,8 @@ mv ~/.config/hypr ~/.config/hypr.orig   # repeat per conflicting app, then stow
 ```
 
 After stowing on Omarchy, apply the changes: `hyprctl reload`,
-`omarchy restart waybar`, `omarchy restart walker`.
+`omarchy restart waybar`. For nvim, run `omarchy-nvim-setup` to install
+omarchy's themed LazyVim (it is not part of this repo).
 
 ### Migrating from the old single-`.config` layout
 
@@ -64,6 +72,9 @@ done
 ## Notes
 
 - **tmux prefix:** `C-a` locally, `C-b` inside an SSH session (so a nested
-  remote tmux doesn't collide with the local one).
+  remote tmux doesn't collide with the local one). Set in both the macOS and
+  Linux `tmux.conf`.
 - **`linux/.config/hypr/monitors.conf`** is machine-specific (display
   names/resolutions) — adjust per machine after stowing.
+- **nvim on Linux** is omarchy's LazyVim, not this repo. Restore it with
+  `omarchy-nvim-setup`; its colorscheme follows `omarchy theme set`.
